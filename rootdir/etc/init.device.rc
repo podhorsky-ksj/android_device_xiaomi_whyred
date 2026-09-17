@@ -74,6 +74,8 @@ on boot
     chown system system /sys/class/power_supply/battery/charging_enabled
 
     # Thermal
+    chmod 0660 /sys/class/thermal/thermal_message/sconfig
+    chown system system /sys/class/thermal/thermal_message/sconfig
     chmod 0770 /sys/class/power_supply/battery/device/thermalcall
     chown system system /sys/class/power_supply/battery/device/thermalcall
 
