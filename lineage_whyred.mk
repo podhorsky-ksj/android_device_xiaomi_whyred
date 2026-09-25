@@ -15,6 +15,10 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from whyred device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+# Keep system-server dexpreopt artifacts while avoiding the oversized profile
+# compilation that exceeds the host dex2oat watchdog on this legacy device.
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := verify
+
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := whyred
 PRODUCT_MANUFACTURER := Xiaomi

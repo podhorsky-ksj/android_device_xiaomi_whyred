@@ -7,7 +7,7 @@
 # Inherit from bouquet-common
 include device/xiaomi/bouquet-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/xiaomi/whyred
+DEVICE_PATH := device/xiaomi/bouquet
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2160
@@ -39,4 +39,4 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 VENDOR_SECURITY_PATCH := 2018-11-01
 
 # Inherit the proprietary files
-include vendor/xiaomi/whyred/BoardConfigVendor.mk
+include vendor/xiaomi/bouquet/BoardConfigVendor.mk

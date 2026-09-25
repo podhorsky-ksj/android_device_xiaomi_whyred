@@ -7,7 +7,7 @@
 # Inherit from bouquet-common
 $(call inherit-product, device/xiaomi/bouquet-common/bouquet.mk)
 
-DEVICE_PATH := device/xiaomi/whyred
+DEVICE_PATH := device/xiaomi/bouquet
 
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
@@ -44,7 +44,7 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    device/xiaomi/bouquet
 
 # USB
 PRODUCT_PACKAGES += \
@@ -55,4 +55,7 @@ PRODUCT_PACKAGES += \
     WhyredWifiOverlay
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
+$(call inherit-product, vendor/xiaomi/bouquet/whyred-vendor.mk)
+
+# Local build-only integration for the external MindTheGapps ZIP.
+$(call inherit-product, vendor/ksj/mindthegapps/mindthegapps.mk)
